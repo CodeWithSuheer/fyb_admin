@@ -97,7 +97,7 @@ const CreateProduct = () => {
 
   return (
     <>
-      <section className="bg-gray-200 dark:bg-gray-900">
+      <section className="bg-[#E5E5E5] dark:bg-gray-900">
         <div className="py-8 px-18 sm:px-20 md:px-16 lg:px-40 mx-auto max-w-full lg:py-10">
           <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
             Add a new product

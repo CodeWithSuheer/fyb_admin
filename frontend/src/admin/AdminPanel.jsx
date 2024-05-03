@@ -19,13 +19,13 @@ const AdminBody = () => {
 
   const { user } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
+  // useEffect(() => {
+  //   if (!user) {
+  //     navigate("/login");
+  //   }
 
-    // dispatch(getProductAsync());
-  }, [user, dispatch, navigate]);
+  //   // dispatch(getProductAsync());
+  // }, [user, dispatch, navigate]);
 
   const handleLogout = async () => {
     if (user && user.token) {
@@ -79,7 +79,7 @@ const AdminBody = () => {
     <>
       <div className="antialiased bg-gray-50 dark:bg-gray-900">
         {/* ---------------- NAVBAR ---------------- */}
-        <nav className="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+        <nav className="bg-white border-b border-gray-200 shadow-md px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
           <div className="flex flex-wrap justify-between items-center">
             {/* ---------------- NAVBAR - LEFT ---------------- */}
             <div className="flex justify-start items-center">
@@ -133,7 +133,7 @@ const AdminBody = () => {
             </div>
 
             {/* ---------------- NAVBAR - RIGHT ---------------- */}
-            <div className="flex items-center lg:order-2">
+            <div className="flex items-center gap-2 lg:order-2">
               <button
                 onClick={handleThemeChange}
                 className=" text-gray-800 dark:text-white px-3 py-2.5 rounded-lg"
@@ -193,18 +193,31 @@ const AdminBody = () => {
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
         >
-          <div className="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
-            <ul className="space-y-2">
+          <div className="overflow-y-auto py-5 px-0 h-full bg-white dark:bg-gray-800">
+            <ul className=" mt-7">
               {/* DASHBOARD */}
               <li>
                 <Link
                   to="/admin"
-                  className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className={`h-14 pl-4 flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 "
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 hover:bg-gray-100"
+                  } group`}
                 >
-                  <FaStore
-                    size={22}
-                    className="text-gray-500 dark:text-gray-400"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_2.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_2.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  )}
                   <span className="ml-3">Dashboard</span>
                 </Link>
               </li>
@@ -213,7 +226,11 @@ const AdminBody = () => {
               <li>
                 <Link
                   to="/admin/all_product"
-                  className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className={`h-14 pl-4 border-t flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin/all_product"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 dark:border-gray-400"
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
+                  } group`}
                 >
                   <FaStore
                     size={22}
@@ -227,7 +244,11 @@ const AdminBody = () => {
               <li>
                 <Link
                   to="/admin/create_product"
-                  className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  className={`h-14 pl-4 border-t flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin/create_product"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 dark:border-gray-400"
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
+                  } group`}
                 >
                   <MdAddBusiness
                     size={22}
@@ -236,14 +257,16 @@ const AdminBody = () => {
                   <span className="ml-3">Add Product</span>
                 </Link>
               </li>
-            </ul>
 
-            <ul className="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
               {/* VIEW ORDER */}
               <li>
                 <Link
-                  to="/admin/create_product"
-                  className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  to="/admin/view_orders"
+                  className={`h-14 pl-4 border-t flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin/view_orders"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 dark:border-gray-400"
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
+                  } group`}
                 >
                   <MdAddBusiness
                     size={22}
@@ -256,8 +279,12 @@ const AdminBody = () => {
               {/* CREATE COUPON */}
               <li>
                 <Link
-                  to="/admin/create_product"
-                  className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                  to="/admin/create_coupon"
+                  className={`h-14 pl-4 border-t flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin/create_coupon"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 dark:border-gray-400"
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
+                  } group`}
                 >
                   <MdAddBusiness
                     size={22}
@@ -286,7 +313,7 @@ const AdminBody = () => {
           </div>
         </aside>
         {/* ---------------- DASHBOARD ---------------- */}
-        <main className="md:ml-64 h-auto pt-20 bg-gray-200 dark:bg-gray-900">
+        <main className="md:ml-64 h-auto pt-[4.0rem] bg-gray-200 dark:bg-gray-900">
           <Outlet />
         </main>
       </div>

@@ -3,7 +3,7 @@
 import { useSelector } from "react-redux";
 
 const AllProducts = () => {
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const { isLoading } = useSelector((state) => state.product);
   // console.log('products', products);
@@ -42,13 +42,85 @@ const AllProducts = () => {
         </>
       ) : (
         <>
-          <section>
-            <div className="mx-auto min-h-screen max-w-screen-xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-              <header>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
-                  DASHBOARD
-                </h2>
-              </header>
+          <section className="bg-[#E5E5E5] dark:bg-gray-900 min-h-screen py-8 sm:py-10 mx-auto max-w-screen-xl px-4 lg:px-10">
+            {/* ------------ FIRST STATS BAR ------------*/}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-2 xl:grid-cols-4 lg:gap-4">
+              <div className="h-40 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 flex justify-start items-center">
+                <div className="stat_data pl-4">
+                  <h3 className="text-gray-900 dark:text-gray-100 mt-1.5 text-md font-normal">
+                    Gross Sale
+                  </h3>
+                  <h2 className="text-gray-900 dark:text-gray-100 mt-1.5 text-2xl font-semibold">
+                    232,789
+                  </h2>
+                  <p className="text-gray-900 mt-1.5 bg-gray-200 px-3 py-1 w-16 rounded-lg">
+                    +1.5k
+                  </p>
+                </div>
+              </div>
+
+              <div className="h-40 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 flex justify-start items-center">
+                <div className="stat_data pl-4">
+                  <h3 className="text-gray-900 dark:text-gray-100 mt-1.5 text-md font-normal">
+                    Gross Sale
+                  </h3>
+                  <h2 className="text-gray-900 dark:text-gray-100 mt-1.5 text-2xl font-semibold">
+                    232,789
+                  </h2>
+                  <p className="text-gray-900 mt-1.5 bg-gray-200 px-3 py-1 w-16 rounded-lg">
+                    +1.5k
+                  </p>
+                </div>
+              </div>
+
+              <div className="h-40 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 flex justify-start items-center">
+                <div className="stat_data pl-4">
+                  <h3 className="text-gray-900 dark:text-gray-100 mt-1.5 text-md font-normal">
+                    Gross Sale
+                  </h3>
+                  <h2 className="text-gray-900 dark:text-gray-100 mt-1.5 text-2xl font-semibold">
+                    232,789
+                  </h2>
+                  <p className="text-gray-900 mt-1.5 bg-gray-200 px-3 py-1 w-16 rounded-lg">
+                    +1.5k
+                  </p>
+                </div>
+              </div>
+
+              <div className="h-40 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 flex justify-start items-center">
+                <div className="stat_data pl-4">
+                  <h3 className="text-gray-900 dark:text-gray-100 mt-1.5 text-md font-normal">
+                    Gross Sale
+                  </h3>
+                  <h2 className="text-gray-900 dark:text-gray-100 mt-1.5 text-2xl font-semibold">
+                    232,789
+                  </h2>
+                  <p className="text-gray-900 mt-1.5 bg-gray-200 px-3 py-1 w-16 rounded-lg">
+                    +1.5k
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* ------------ SECOND STATS BAR ------------*/}
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
+              <div className="rounded-lg md:col-span-1 lg:col-span-4 xl:col-span-3">
+                {/* BAR CHARTS */}
+                <div className="h-72 rounded-lg text-gray-900 dark:text-gray-100 border border-gray-400 dark:border-gray-700 w-full p-4">
+                  Bar Chart
+                </div>
+              </div>
+
+              {/* SALES BY LOCATION */}
+              <div className="px-4 pt-5 lg:col-span-4 xl:col-span-1 pb-5 text-gray-900 dark:text-gray-200 rounded-lg border border-gray-400 dark:border-gray-700">
+                <h2 className="mb-3 font-medium text-lg">Customer Reviews</h2>
+                <p className="text-sm">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Commodi tenetur aliquam obcaecati molestiae, debitis dolores
+                  quae quasi exercitationem iusto, sequi hic? Veniam,
+                  consequatur nihil impedit cumque non magnam hic.
+                </p>
+              </div>
             </div>
           </section>
         </>

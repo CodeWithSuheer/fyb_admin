@@ -36,7 +36,8 @@ const Login = () => {
     // HANDLE SUBMIT
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(loginUserAsync(formData))
+        navigate("/admin")
+        // dispatch(loginUserAsync(formData))
     }
 
     return (
