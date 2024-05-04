@@ -63,7 +63,7 @@ const AllProducts = () => {
       ) : (
         <>
           <section>
-            <div className="bg-[#E5E5E5] mx-auto min-h-screen max-w-screen-xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+            <div className="bg-[#E5E5E5] dark:bg-gray-900 mx-auto min-h-screen max-w-screen-xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
               {/* HEADER FOR ALL PRODUCT PAGE */}
               <header className="flex justify-between items-center flex-wrap">
                 <div className="heading">

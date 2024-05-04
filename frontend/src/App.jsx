@@ -14,6 +14,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { userSessionAsync } from "./features/authSlice";
 import SendOtp from "./auth/SendOtp";
+import CreateCoupon from "./admin/CreateCoupon";
+import Reviews from "./admin/Reviews";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +43,8 @@ function App() {
             <Route path="update_product/:id" element={<UpdateProduct />} />
             <Route path="view_orders" element={<ViewOrders />} />
             <Route path="orderDetail/:id" element={<OrderDetailPage />} />
+            <Route path="create_coupon" element={<CreateCoupon />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
         <Toaster />
