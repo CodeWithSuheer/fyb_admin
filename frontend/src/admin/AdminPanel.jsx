@@ -3,8 +3,6 @@ import { Moon, Sun } from "lucide-react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUserAsync, reset } from "../features/authSlice";
-import { FaStore } from "react-icons/fa";
-import { MdAddBusiness } from "react-icons/md";
 // import { getProductAsync } from "../features/productSlice";
 
 const AdminBody = () => {
@@ -126,7 +124,7 @@ const AdminBody = () => {
                   src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/WhatsApp_Image_2024-04-27_at_12.11.46_AM.jpg?v=1714497650"
                   alt=""
                 />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                <span className="playfair self-center text-2xl tracking-wide font-semibold whitespace-nowrap dark:text-white">
                   For Your Beauty
                 </span>
               </Link>
@@ -214,7 +212,7 @@ const AdminBody = () => {
                   ) : (
                     <img
                       className="w-5"
-                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_2.png?v=1714764665"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_2_f53d1e2b-c0e9-479b-91de-4a7452aaa325.png?v=1714764984"
                       alt="side_bar_img"
                     />
                   )}
@@ -232,10 +230,19 @@ const AdminBody = () => {
                       : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
                   } group`}
                 >
-                  <FaStore
-                    size={22}
-                    className="text-gray-500 dark:text-gray-400"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group-2.png?v=1714764664"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/image_2.png?v=1714764984"
+                      alt="side_bar_img"
+                    />
+                  )}
                   <span className="ml-3">All Products</span>
                 </Link>
               </li>
@@ -250,10 +257,19 @@ const AdminBody = () => {
                       : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
                   } group`}
                 >
-                  <MdAddBusiness
-                    size={22}
-                    className="text-gray-500 dark:text-gray-400"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group-3.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/image_3.png?v=1714764984"
+                      alt="side_bar_img"
+                    />
+                  )}
                   <span className="ml-3">Add Product</span>
                 </Link>
               </li>
@@ -268,10 +284,19 @@ const AdminBody = () => {
                       : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
                   } group`}
                 >
-                  <MdAddBusiness
-                    size={22}
-                    className="text-gray-500 dark:text-gray-400"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group-1.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/image_4.png?v=1714764984"
+                      alt="side_bar_img"
+                    />
+                  )}
                   <span className="ml-3">View Orders</span>
                 </Link>
               </li>
@@ -286,11 +311,47 @@ const AdminBody = () => {
                       : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
                   } group`}
                 >
-                  <MdAddBusiness
-                    size={22}
-                    className="text-gray-500 dark:text-gray-400"
-                  />
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_c04055e3-0578-40f8-87cc-8b38533fe552.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/image_5.png?v=1714764984"
+                      alt="side_bar_img"
+                    />
+                  )}
                   <span className="ml-3">Create Coupon</span>
+                </Link>
+              </li>
+
+              {/* REVIEWS */}
+              <li>
+                <Link
+                  to="/admin/reviews"
+                  className={`h-14 pl-4 border-t flex items-center p-2 text-base font-medium ${
+                    location.pathname === "/admin/reviews"
+                      ? "bg-[#EC72AF] text-white dark:bg-gray-600 dark:text-gray-100 dark:border-gray-400"
+                      : "bg-[#FAFAFA] dark:bg-gray-800 text-gray-900 dark:text-gray-200 dark:border-gray-500 hover:bg-gray-100"
+                  } group`}
+                >
+                  {theme === "dark" ? (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/Mask_group_c04055e3-0578-40f8-87cc-8b38533fe552.png?v=1714764665"
+                      alt="side_bar_img"
+                    />
+                  ) : (
+                    <img
+                      className="w-5"
+                      src="https://cdn.shopify.com/s/files/1/0852/5099/8550/files/image_5.png?v=1714764984"
+                      alt="side_bar_img"
+                    />
+                  )}
+                  <span className="ml-3">Reviews</span>
                 </Link>
               </li>
             </ul>

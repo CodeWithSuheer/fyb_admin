@@ -10,6 +10,8 @@ import "./App.css";
 import Dashboard from "./admin/Dashboard";
 import ViewOrders from "./admin/ViewOrders";
 import OrderDetailPage from "./admin/OrderDetailPage";
+import CreateCoupon from "./admin/CreateCoupon";
+import Reviews from "./admin/Reviews";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path="update_product/:id" element={<UpdateProduct />} />
             <Route path="view_orders" element={<ViewOrders />} />
             <Route path="orderDetail/:id" element={<OrderDetailPage />} />
+            <Route path="create_coupon" element={<CreateCoupon />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
         <Toaster />
