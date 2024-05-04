@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { logoutUserAsync} from "../features/authSlice";
+import { FaStore } from "react-icons/fa";
+import { MdAddBusiness } from "react-icons/md";
 import { logoutUserAsync, reset } from "../features/authSlice";
 // import { getProductAsync } from "../features/productSlice";
 
@@ -28,7 +31,6 @@ const AdminBody = () => {
   const handleLogout = async () => {
     if (user && user.token) {
       dispatch(logoutUserAsync());
-      dispatch(reset());
       navigate("/login");
     } else {
       navigate("/login");

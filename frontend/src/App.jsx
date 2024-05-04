@@ -10,10 +10,20 @@ import "./App.css";
 import Dashboard from "./admin/Dashboard";
 import ViewOrders from "./admin/ViewOrders";
 import OrderDetailPage from "./admin/OrderDetailPage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { userSessionAsync } from "./features/authSlice";
+import SendOtp from "./auth/SendOtp";
 import CreateCoupon from "./admin/CreateCoupon";
 import Reviews from "./admin/Reviews";
 
+
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(userSessionAsync());
+  })
+
   return (
     <>
       <BrowserRouter>
@@ -21,6 +31,9 @@ function App() {
           {/* AUTH ROUTE */}
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sendOtp" element={<SendOtp />} />
+          <Route path="/verifyOtp" element={<SendOtp />} />
 
           {/* ADMIN ROUTE */}
           <Route path="/admin" element={<AdminPanel />}>
