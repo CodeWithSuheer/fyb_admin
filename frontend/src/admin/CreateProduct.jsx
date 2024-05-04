@@ -98,8 +98,8 @@ const CreateProduct = () => {
   return (
     <>
       <section className="bg-[#E5E5E5] dark:bg-gray-900">
-        <div className="py-8 px-18 sm:px-20 md:px-16 lg:px-40 mx-auto max-w-full lg:py-10">
-          <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+        <div className="py-8 px-18 sm:px-20 md:px-16 lg:px-14 mx-auto max-w-full lg:py-10">
+          <h2 className="mb-5 playfair text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
             Add a new product
           </h2>
           <form onSubmit={handleSubmit}>
@@ -107,13 +107,13 @@ const CreateProduct = () => {
               {/* NAME */}
               <div className="">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="name"
                 >
                   Product Name
                 </label>
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="name"
                   name="name"
                   placeholder="Type product name"
@@ -129,13 +129,13 @@ const CreateProduct = () => {
               {/* QUANTITY */}
               <div>
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="quantity"
                 >
                   Quantity
                 </label>
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="quantity"
                   name="quantity"
                   placeholder="Available quantity"
@@ -151,13 +151,13 @@ const CreateProduct = () => {
               {/* PRICE */}
               <div className="w-full">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="price"
                 >
                   Price
                 </label>
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="price"
                   name="price"
                   placeholder="Price"
@@ -173,13 +173,13 @@ const CreateProduct = () => {
               {/* SALE PRICE */}
               <div className="w-full">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="sale_price"
                 >
                   Sale Price
                 </label>
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="sale_price"
                   name="sale_price"
                   placeholder="Sale Price"
@@ -195,13 +195,13 @@ const CreateProduct = () => {
               {/* CATEGORY */}
               <div>
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="category"
                 >
                   Category
                 </label>
                 <select
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="category"
                   value={formdata.category}
                   onChange={handleCategoryChange}
@@ -220,13 +220,13 @@ const CreateProduct = () => {
               {/* SUB CATEGORY */}
               <div>
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="category"
                 >
                   Sub Category
                 </label>
                 <select
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   id="subcategory"
                   value={formdata.subCategory}
                   onChange={handleSubCategoryChange}
@@ -246,7 +246,7 @@ const CreateProduct = () => {
               {/* DESC */}
               <div className="sm:col-span-2">
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-1.5 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="description"
                 >
                   Description

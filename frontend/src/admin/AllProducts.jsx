@@ -67,7 +67,7 @@ const AllProducts = () => {
               {/* HEADER FOR ALL PRODUCT PAGE */}
               <header className="flex justify-between items-center flex-wrap">
                 <div className="heading">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
+                  <h2 className="playfair text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
                     All Product Collection
                   </h2>
 

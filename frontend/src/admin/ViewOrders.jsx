@@ -63,8 +63,8 @@ const ViewOrders = () => {
   return (
     <>
       <section className="bg-[#E5E5E5] dark:bg-gray-900 min-h-screen py-8 sm:py-10">
-        <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
-          <h2 className="mb-5 text-3xl font-semibold text-gray-900 dark:text-gray-200">
+        <div className="mx-auto max-w-screen-xl px-4 lg:px-10">
+          <h2 className="mb-5 playfair text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
             View Orders
           </h2>
 
@@ -162,7 +162,7 @@ const ViewOrders = () => {
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    <th className="px-7 py-3" scope="col">
+                    <th className="px-5 py-3" scope="col">
                       Sr #
                     </th>
                     <th className="px-7 py-3" scope="col">
@@ -193,7 +193,7 @@ const ViewOrders = () => {
                       className="border-b dark:border-gray-700 cursor-pointer"
                     >
                       <th
-                        className="px-7 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        className="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         scope="row"
                       >
                         {index + 1}

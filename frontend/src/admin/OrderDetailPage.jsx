@@ -32,7 +32,7 @@ const OrderDetailPage = () => {
 
   return (
     <>
-      <div className="bg-[#E5E5E5] py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+      <div className="bg-[#E5E5E5] dark:bg-gray-900 py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
         <div className="flex justify-between item-start space-y-2 flex-col xl:flex-row">
           <div className="order_data flex gap-x-8">
             <div className="data">
@@ -54,9 +54,8 @@ const OrderDetailPage = () => {
                 Update Order Status
                 <svg
                   aria-hidden="true"
-                  className={`-mr-1 ml-1.5 w-5 h-5 transform ${
-                    isOpen ? "rotate-180" : "rotate-0"
-                  }`}
+                  className={`-mr-1 ml-1.5 w-5 h-5 transform ${isOpen ? "rotate-180" : "rotate-0"
+                    }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"

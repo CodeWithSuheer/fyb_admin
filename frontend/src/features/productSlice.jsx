@@ -62,45 +62,45 @@ const productSlice = createSlice({
         state.message = action.payload;
       })
 
-      // .addCase(getProductAsync.pending, (state, action) => {
-      //   state.isLoading = true;
-      // })
-      // .addCase(getProductAsync.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.isSuccess = true;
-      //   state.products = action.payload;
-      // })
-      // .addCase(getProductAsync.rejected, (state, action) => {
-      //   state.isLoading = false;
-      //   state.isError = true;
-      //   state.message = action.payload;
-      // })
+    // .addCase(getProductAsync.pending, (state, action) => {
+    //   state.isLoading = true;
+    // })
+    // .addCase(getProductAsync.fulfilled, (state, action) => {
+    //   state.isLoading = false;
+    //   state.isSuccess = true;
+    //   state.products = action.payload;
+    // })
+    // .addCase(getProductAsync.rejected, (state, action) => {
+    //   state.isLoading = false;
+    //   state.isError = true;
+    //   state.message = action.payload;
+    // })
 
-      // .addCase(deleteGoalsAsync.pending, (state, action) => {
-      //   // state.isLoading = true;
-      //   state.deleteLoading = true;
-      // })
-      // .addCase(deleteGoalsAsync.fulfilled, (state, action) => {
-      //   // state.isLoading = false;
-      //   state.deleteLoading = false;
-      //   state.isSuccess = true;
-      //   state.products = state.products.filter(
-      //     (product) => product._id !== action.payload.id
-      //   );
-      // })
-      // .addCase(deleteGoalsAsync.rejected, (state, action) => {
-      //   state.isLoading = false;
-      //   state.isError = true;
-      //   state.message = action.payload;
-      // })
+    // .addCase(deleteGoalsAsync.pending, (state, action) => {
+    //   // state.isLoading = true;
+    //   state.deleteLoading = true;
+    // })
+    // .addCase(deleteGoalsAsync.fulfilled, (state, action) => {
+    //   // state.isLoading = false;
+    //   state.deleteLoading = false;
+    //   state.isSuccess = true;
+    //   state.products = state.products.filter(
+    //     (product) => product._id !== action.payload.id
+    //   );
+    // })
+    // .addCase(deleteGoalsAsync.rejected, (state, action) => {
+    //   state.isLoading = false;
+    //   state.isError = true;
+    //   state.message = action.payload;
+    // })
 
-      // .addCase(updateProductAsync.pending, (state, action) => {
-      //   state.updateLoading = true;
-      // })
-      // .addCase(updateProductAsync.fulfilled, (state, action) => {
-      //   state.updateLoading = false;
-      //   state.isSuccess = true;
-      // });
+    // .addCase(updateProductAsync.pending, (state, action) => {
+    //   state.updateLoading = true;
+    // })
+    // .addCase(updateProductAsync.fulfilled, (state, action) => {
+    //   state.updateLoading = false;
+    //   state.isSuccess = true;
+    // });
   },
 });
 
