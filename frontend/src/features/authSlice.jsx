@@ -2,111 +2,138 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-
-// Get user from local storage
-const user = JSON.parse(localStorage.getItem('user'));
-
-
 // INITIAL STATE
 const initialState = {
-    user: user ? user : null,
-    isError: null,
-    isSuccess: null,
-    isLoading: null,
-    message: ''
+  user: null,
+  isLoading: false,
 };
 
 //API URL
-const signupUrl = "http://localhost:4000/api/v1/auth/register";
-const loginUrl = "http://localhost:4000/api/v1/auth/login";
-
+const signupUrl = "http://localhost:8000/api/users/signup";
+const loginUrl = "http://localhost:8000/api/users/login";
+const logoutUrl = "http://localhost:8000/api/users/logout";
+const verifyOtpUrl = "http://localhost:8000/api/users/verifyOtp";
+const sendResetPasswordOTPUrl =
+  "http://localhost:8000/api/users/sendResetPasswordOTP";
+const updatePasswordUrl = "http://localhost:8000/api/users/updatePassword";
+const userSession = "http://localhost:8000/api/users/persistUserSession";
 
 // Register Function
-export const createuserAsync = createAsyncThunk("user/create", async (formData, thunkAPI) => {
+export const createuserAsync = createAsyncThunk(
+  "user/create",
+  async (formData) => {
     try {
-        const response = await axios.post(signupUrl, formData);
-        if (response.data) {
-            localStorage.setItem("user", JSON.stringify(response.data))
-        }
-        console.log(response.data);
-        return response.data;
+      const response = await axios.post(signupUrl, formData);
+      toast.success(response.data.message);
+      return response.data;
     } catch (error) {
-        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-        return thunkAPI.rejectWithValue(message);
+      toast.error(error.response.data.error);
     }
-});
+  }
+);
 
 // Login Function
-export const loginUserAsync = createAsyncThunk("user/login", async (formData, thunkAPI) => {
+export const loginUserAsync = createAsyncThunk(
+  "user/login",
+  async (formData) => {
     try {
-        const response = await axios.post(loginUrl, formData);
-        if (response.data) {
-            localStorage.setItem("user", JSON.stringify(response.data))
-        }
-        return response.data;
+      const response = await axios.post(loginUrl, formData);
+      toast.success(response.data.message);
+      return response.data;
     } catch (error) {
-        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-        return thunkAPI.rejectWithValue(message);
+      toast.error(error.response.data.error);
     }
+  }
+);
+
+// Logout
+export const logoutUserAsync = createAsyncThunk("user/logout", async () => {
+  try {
+    const response = await axios.post(logoutUrl);
+    toast.success(response.data.message);
+    return response.data;
+  } catch (error) {
+    toast.error(error.response.data.error);
+  }
 });
 
-// Logout Function
-export const logoutUserAsync = createAsyncThunk("user/logout", async () => {
-    localStorage.removeItem("user");
-})
+// User Session Function
+export const userSessionAsync = createAsyncThunk(
+  "user/userSession",
+  async () => {
+    try {
+      const response = await axios.get(userSession);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
+// sendOtp
+export const sendOtpAsync = createAsyncThunk("user/serndOtp", async (formData) => {
+    try {
+      const response = await axios.post(sendResetPasswordOTPUrl,formData);
+      toast.success(response.data.message);
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.error);
+    }
+  });
+
+  // verifyOtp
+export const verifyOtpAsync = createAsyncThunk("user/verifyOtp", async (formData) => {
+    try {
+      const response = await axios.post(verifyOtpUrl,formData);
+      toast.success(response.data.message);
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.error);
+    }
+  });
 
 const authSlice = createSlice({
-    name: "authSlice",
-    initialState,
-    reducers: {
-        reset: (state) => {
-            state.isLoading = false
-            state.isSuccess = false
-            state.isError = false
-            state.message = ''
-        }
-    },
+  name: "authSlice",
+  initialState,
+  reducers: {},
 
-    extraReducers: (builder) => {
-        builder
-            .addCase(createuserAsync.pending, (state, action) => {
-                state.isLoading = true;
-            })
-            .addCase(createuserAsync.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.isSuccess = true;
-                state.user = action.payload;
-            })
-            .addCase(createuserAsync.rejected, (state, action) => {
-                state.isLoading = false;
-                state.isError = true;
-                state.message = action.payload;
-                state.user = null;
-            })
+  extraReducers: (builder) => {
+    builder
+      // signup
+      .addCase(createuserAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(createuserAsync.fulfilled, (state, action) => {
+        state.isLoading = false;
+      })
 
+      // logout
+      .addCase(logoutUserAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(logoutUserAsync.fulfilled, (state, action) => {
+        state.user = null;
+      })
 
-            .addCase(loginUserAsync.pending, (state, action) => {
-                state.isLoading = true;
-            })
-            .addCase(loginUserAsync.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.isSuccess = true;
-                state.user = action.payload;
-            })
-            .addCase(loginUserAsync.rejected, (state, action) => {
-                state.isLoading = false;
-                state.isError = true;
-                state.message = action.payload;
-                state.user = null;
-            })
+      // Login
+      .addCase(loginUserAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(loginUserAsync.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+      })
 
+      // User Session
+      .addCase(userSessionAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(userSessionAsync.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+      })
 
-            .addCase(logoutUserAsync.fulfilled, (state, action) => {
-                state.user = null;
-            })
-    },
+  },
 });
 
-export const { reset } = authSlice.actions;
 export default authSlice.reducer;
